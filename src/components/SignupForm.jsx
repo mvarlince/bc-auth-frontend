@@ -10,7 +10,7 @@ export default function SignupForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // make a post request to the API with the form data
-    fetch('http://127.0.0.1:5002/signup', {
+    fetch('https://auth-api-c9.web.app/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
