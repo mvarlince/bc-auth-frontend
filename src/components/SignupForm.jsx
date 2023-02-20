@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '../App'
 
 export default function SignupForm() {
@@ -39,6 +39,8 @@ export default function SignupForm() {
           value={password} onChange={e => setPassword(e.target.value)} />
       </label><br />
       <input type="submit" value="Sign Up" />
+      <br />
+      <Link to="/login" className='App-link'>Login</Link>
     </form>
   )
 }
