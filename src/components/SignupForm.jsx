@@ -10,7 +10,8 @@ export default function SignupForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // make a post request to the API with the form data
-    fetch('https://auth-api-c9.web.app/signup', {
+   // https://auth-api-c9.web.app/signup
+    fetch('http://127.0.0.1:5000/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -21,8 +22,10 @@ export default function SignupForm() {
     // then...
       .then(res => res.json())
       .then(response => {
+        console.log(response)
         // 1. do something with the new user
         setUser(response.user)
+        localStorage.setItem('token', response.token)
         // 2. redirect to the content page
         navigate('/secret')
       })
